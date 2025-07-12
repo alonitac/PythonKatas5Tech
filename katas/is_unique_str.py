@@ -8,7 +8,16 @@ def is_unique(string):
     Returns:
         True if all characters are unique, False otherwise
     """
+    lowered = string.lower()
+    letters = [0] * 26
+    for l in lowered:
+        if 'a' <= l <= 'z':  
+            idx = ord(l) - ord('a')  
+            letters[idx] += 1
+            if letters[idx] > 1:
+                return False
     return True
+
 
 
 if __name__ == '__main__':
