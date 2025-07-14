@@ -1,3 +1,7 @@
+from gettext import find
+from PIL import Image, ImageDraw
+
+
 def is_unique(string):
     """
     Checks if a string has all unique characters (case-insensitive).
@@ -8,6 +12,10 @@ def is_unique(string):
     Returns:
         True if all characters are unique, False otherwise
     """
+    for i in string:
+        if string.count(i) > 1:
+            #print("i is " ,{i} ," found" ,{string.find(i)})
+            return False
     return True
 
 
@@ -21,3 +29,5 @@ if __name__ == '__main__':
     print(f'"{test2}" has all unique characters: {is_unique(test2)}')  # Should be True
     print(f'"{test3}" has all unique characters: {is_unique(test3)}')  # Should be True
     print(f'"{test4}" has all unique characters: {is_unique(test4)}')  # Should be True
+
+    
