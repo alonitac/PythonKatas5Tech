@@ -1,5 +1,6 @@
 import unittest
 from katas.is_unique_str import is_unique
+
 # The test case
 class TestIsUnique(unittest.TestCase):
     def test_unique_string(self):
@@ -16,3 +17,4 @@ class TestIsUnique(unittest.TestCase):
 
     def test_single_character(self):
         self.assertTrue(is_unique("x"))
+
