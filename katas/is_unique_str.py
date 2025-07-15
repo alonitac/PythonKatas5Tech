@@ -1,5 +1,5 @@
 from gettext import find
-from PIL import Image, ImageDraw
+from PIL import Image
 
 
 def is_unique(string):
