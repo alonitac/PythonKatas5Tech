@@ -6,7 +6,10 @@ def reduce_array(numbers):
     Args:
         numbers: the list of integers to modify
     """
-    pass
+    n = len(numbers)
+    for i in range(n-1,0,-1):
+        numbers[i] = numbers[i]- numbers[i-1]
+        
 
 
 def print_list(array):
