@@ -1,6 +1,5 @@
 import re
 
-
 def is_valid_email(email: str):
     """
     Validates if an email address is properly formatted.
@@ -21,7 +20,14 @@ def is_valid_email(email: str):
     Returns:
         True if the email is valid, False otherwise
     """
-    return False
+    if email.count("@")!= 1 or email=="":
+        return False
+    splitted=email.split("@")
+    splitted=splitted[1:]
+    if splitted[0].count('.')!= 1:
+        return False
+    return True
+    
 
 
 if __name__ == "__main__":

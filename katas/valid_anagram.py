@@ -11,7 +11,21 @@ def is_anagram(s1, s2):
     Returns:
         True if the strings are anagrams, False otherwise
     """
-    return False
+    if len(s1) != len(s2):
+        return False
+    s1=s1.lower()
+    s2=s2.lower()
+    letters1=[0]*26
+    letters2=[0]*26
+    for i in s1:
+        if ord('a')<=ord(i)<=ord('z'):
+            letters1[ord(i)-ord('a')]+=1
+    for j in s2:
+        if ord('a')<=ord(j)<=ord('z'):
+            letters2[ord(j)-ord('a')]+=1
+    if letters1!=letters2:
+        return False
+    return True
 
 
 if __name__ == '__main__':

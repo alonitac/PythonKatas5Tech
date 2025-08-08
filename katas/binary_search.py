@@ -12,6 +12,18 @@ def binary_search(sorted_array, target):
     Returns:
         the index of the target value if found, or -1 if not found
     """
+    low=0
+    high=len(sorted_array)-1
+    mid = low + (high - low) // 2
+    while low <= high:
+
+        mid = low + (high - low) // 2
+        if sorted_array[mid] == target:
+            return mid
+        elif sorted_array[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
     return -1
 
 

@@ -9,7 +9,15 @@ def find_missing_number(numbers):
     Returns:
         the missing number
     """
-    return 0
+    if numbers==[]:
+        return 0
+    maximum=max(numbers)
+    n=maximum+1
+    sum1=int((n/2)*(1*(n-1)))
+    actual_sum=sum(numbers)
+    if sum1==actual_sum:
+        return 0
+    return sum1-actual_sum
 
 
 if __name__ == '__main__':

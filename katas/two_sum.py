@@ -10,7 +10,17 @@ def two_sum(numbers, target):
         a list containing the indices of the two numbers that add up to target,
         or an empty list if no such pair exists
     """
-    return []
+    ind=[]
+    for i in range(len(numbers)):
+        temp=target-numbers[i]
+        if numbers.count(temp)>=1:
+            index=numbers.index(temp)
+            if index!=i:
+                ind.append(i)
+                ind.append(index)
+                break
+    return ind
+
 
 
 if __name__ == '__main__':
