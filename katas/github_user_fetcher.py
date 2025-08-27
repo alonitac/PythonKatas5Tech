@@ -48,12 +48,9 @@ def get_user_repositories_count(username: str) -> int:
         Number of public repositories, or 0 if user not found/error
     """
     # TODO: Implement this function using fetch_github_user
-    resp=requests.get(f"https://api.github.com/users/{username}")
-    if resp.status_code == 200:
-        data = resp.json()
-        return {
-            'public_repos': data.get('public_repos')
-        }
+    result=fetch_github_user(username)
+    if result:
+        return result.get('public_repos')
     return 0
 
 
@@ -61,6 +58,6 @@ if __name__ == '__main__':
     # Test the functions
     user = fetch_github_user("TameerAmer")
     print(f"User info: {user}")
-
+    
     repo_count = get_user_repositories_count("TameerAmer")
     print(f"Repository count: {repo_count}")

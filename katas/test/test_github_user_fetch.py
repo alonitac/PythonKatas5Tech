@@ -20,10 +20,12 @@ class TestFetchGitHubUser(unittest.TestCase):
         # Assert
         self.assertEqual(user_info['login'], 'TameerAmer')
         self.assertEqual(user_info['name'], 'Tameer Amer')
-        self.assertEqual(user_info['public_repos'], 5)
         self.assertEqual(user_info['followers'], 10)
-        
+
+        self.assertEqual(get_user_repositories_count("TameerAmer"), 5)
+
 
     def test_fetch_non_existing_user(self):
         self.assertEqual(fetch_github_user("non_existing_user!!!!!"), None)
+        self.assertEqual(get_user_repositories_count("non_existing_user!!!!!"), 0)
         
